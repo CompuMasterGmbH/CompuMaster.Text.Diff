@@ -1,5 +1,5 @@
 # CompuMaster.Text.Diff
-Quickly dump a diff output to System.Console or to HTML
+Quickly dump a nicely formatted diff output to System.Console or to HTML
 
 ## Create quickly a colored diff-output to the system console
 ![Screenshot of samples for System.Console](Samples/ConsoleSamples.png)
