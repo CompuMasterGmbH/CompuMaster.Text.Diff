@@ -5,9 +5,9 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyDescription("Quickly dump a diff output to System.Console or to HTML")>
 <Assembly: AssemblyCompany("CompuMaster GmbH")>
 <Assembly: AssemblyProduct("CompuMaster Tools")>
-<Assembly: AssemblyCopyright("2017 CompuMaster GmbH")>
+<Assembly: AssemblyCopyright("2017,2019 CompuMaster GmbH")>
 <Assembly: AssemblyTrademark("camm")>
 <Assembly: CLSCompliant(False)>
 
 <Assembly: Guid("6e3937a8-0195-43b7-b94a-b070632ff07e")>
-<Assembly: AssemblyVersion("2017.05.03.100")>
+<Assembly: AssemblyVersion("2019.07.22.100")>

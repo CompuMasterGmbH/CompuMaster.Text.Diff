@@ -48,8 +48,8 @@
     </StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DiffLib, Version=2017.4.24.2347, Culture=neutral, PublicKeyToken=9e2fabf3af85dba9, processorArchitecture=MSIL">
-      <HintPath>..\packages\DiffLib.2017.4.24.2347\lib\netstandard1.0\DiffLib.dll</HintPath>
+    <Reference Include="DiffLib, Version=2017.7.26.1241, Culture=neutral, PublicKeyToken=9e2fabf3af85dba9, processorArchitecture=MSIL">
+      <HintPath>..\packages\DiffLib.2017.7.26.1241\lib\net45\DiffLib.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
