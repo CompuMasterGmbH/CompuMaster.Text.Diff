@@ -136,8 +136,8 @@ Namespace CompuMaster.Text
                 If section.IsMatch Then
                     html.Append(EncodeForHtml(EncodeTextForHtml(text1.Substring(i1, section.LengthInCollection1), inputType), humanFriendlyEncodingOfControlChars))
                 Else
-                    html.Append("<span style='background-color: #ffcccc; text-decoration: line-through;'>" + EncodeForHtml(EncodeTextForHtml(text1.Substring(i1, section.LengthInCollection1), inputType), humanFriendlyEncodingOfControlChars) + "</span>")
-                    html.Append("<span style='background-color: #ccffcc;'>" + EncodeForHtml(EncodeTextForHtml(text2.Substring(i2, section.LengthInCollection2), inputType), humanFriendlyEncodingOfControlChars) + "</span>")
+                    html.Append("<span style=""background-color: #ffcccc; text-decoration: line-through;"">" + EncodeForHtml(EncodeTextForHtml(text1.Substring(i1, section.LengthInCollection1), inputType), humanFriendlyEncodingOfControlChars) + "</span>")
+                    html.Append("<span style=""background-color: #ccffcc;"">" + EncodeForHtml(EncodeTextForHtml(text2.Substring(i2, section.LengthInCollection2), inputType), humanFriendlyEncodingOfControlChars) + "</span>")
                 End If
 
                 i1 += section.LengthInCollection1
