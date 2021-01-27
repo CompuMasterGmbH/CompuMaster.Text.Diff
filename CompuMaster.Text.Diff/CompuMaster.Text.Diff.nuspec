@@ -12,7 +12,7 @@
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>.NET library for easy access of diff features with human friendly output at Console or HTML</description>
     <releaseNotes></releaseNotes>
-    <copyright>2017,2019 CompuMaster GmbH</copyright>
+    <copyright>2017,2019,2020,2021 CompuMaster GmbH</copyright>
     <tags>CompuMaster Common Utils Diff</tags>
   </metadata>
 </package>

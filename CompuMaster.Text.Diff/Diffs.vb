@@ -5,7 +5,7 @@ Imports DiffLib
 
 Namespace CompuMaster.Text
 
-    Public Class Diffs
+    Public NotInheritable Class Diffs
 
 #Region "DumpDiff2Console"
         Public Shared Sub DumpDiffToConsoleShort(text1 As String, text2 As String)
