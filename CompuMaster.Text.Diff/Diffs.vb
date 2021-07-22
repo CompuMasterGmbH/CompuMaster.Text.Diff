@@ -2,6 +2,7 @@
 Option Strict On
 
 Imports DiffLib
+Imports CompuMaster.VisualBasicCompatibility
 
 Namespace CompuMaster.Text
 
