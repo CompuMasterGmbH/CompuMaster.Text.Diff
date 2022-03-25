@@ -12,13 +12,13 @@
 		<Description>Quickly dump a diff output to Console or to HTML</Description>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<Configurations>Debug;Release</Configurations>
+		<OutputType>Exe</OutputType>
 	</PropertyGroup>
 	<PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
 		<PlatformTarget>AnyCPU</PlatformTarget>
 		<ProjectGuid>{299D8191-DC99-4CC8-9B47-5E4F479B8693}</ProjectGuid>
-		<OutputType>Exe</OutputType>
-		<StartupObject>Diff.MainApp</StartupObject>
-		<RootNamespace>Diff</RootNamespace>
+		<StartupObject>Sub Main</StartupObject>
+		<RootNamespace>DiffConsole</RootNamespace>
 		<AssemblyName>Diff</AssemblyName>
 		<FileAlignment>512</FileAlignment>
 		<MyType>Console</MyType>
@@ -59,6 +59,7 @@
 	</PropertyGroup>
 	<PropertyGroup>
 		<MyType>Empty</MyType>
+		<ApplicationIcon>cm.ico</ApplicationIcon>
 	</PropertyGroup>
   <ItemGroup>
     <PackageReference Include="CommandLineParser" Version="2.8.0" />
