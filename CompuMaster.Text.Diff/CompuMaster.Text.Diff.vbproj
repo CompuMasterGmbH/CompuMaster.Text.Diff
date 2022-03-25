@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<RootNamespace></RootNamespace>
@@ -56,10 +56,17 @@
 	</PropertyGroup>
 	<PropertyGroup>
 		<MyType>Empty</MyType>
+		<PackageIconUrl />
 	</PropertyGroup>
 	<ItemGroup>
 	  <PackageReference Include="CommandLineParser" Version="2.8.0" />
 	  <PackageReference Include="CompuMaster.VisualBasicCompatibility" Version="1.0.4" />
 	  <PackageReference Include="difflib" Version="2017.7.26.1241" />
+	</ItemGroup>
+	<ItemGroup>
+	  <None Include="logo_64x64.png">
+	    <Pack>True</Pack>
+	    <PackagePath></PackagePath>
+	  </None>
 	</ItemGroup>
 </Project>
