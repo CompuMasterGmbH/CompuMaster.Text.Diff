@@ -54,7 +54,7 @@ jobs:
 
             - name: Zip binaries console-diff-app
               run: |
-                  (cd ${{env.BUILD_OUTPUT_BASEDIR}}/${{env.BUILD_CONFIGURATION}} && zip $OLDPWD/diff-console-app.zip -r .)
+                  (cd ${{env.BUILD_OUTPUT_BASEDIR2}}/${{env.BUILD_CONFIGURATION}} && zip $OLDPWD/diff-console-app.zip -r .)
 
             - name: Publish binaries
               uses: softprops/action-gh-release@v1
