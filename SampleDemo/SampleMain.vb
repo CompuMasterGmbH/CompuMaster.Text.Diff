@@ -1,11 +1,13 @@
 ﻿Option Explicit On
 Option Strict On
 
+Imports Microsoft.VisualBasic
+
 Module SampleMain
 
     Sub Main()
-        Const text1 As String = "This is a demo" & vbNewLine & "This is a test of the diff implementation, with some text that is deleted." & vbNewLine & vbNewLine & vbTab & "- a 1st bullet point" & vbNewLine & vbTab & "- a 2nd bullet point" & vbNewLine & vbNewLine & vbTab & CompuMaster.VisualBasicCompatibility.ControlChars.NullChar & "End of diff demo."
-        Const text2 As String = "This is a demo" & vbNewLine & "This is another test of the same implementation, with some more text." & vbNewLine & vbNewLine & vbTab & "- a 1st bullet point" & vbNewLine & vbTab & "- a 2nd bullet point" & vbNewLine & vbNewLine & "End of diff demo."
+        Const text1 As String = "This is a demo" & ControlChars.CrLf & "This is a test of the diff implementation, with some text that is deleted." & ControlChars.CrLf & ControlChars.CrLf & vbTab & "- a 1st bullet point" & ControlChars.CrLf & vbTab & "- a 2nd bullet point" & ControlChars.CrLf & ControlChars.CrLf & vbTab & CompuMaster.VisualBasicCompatibility.ControlChars.NullChar & "End of diff demo."
+        Const text2 As String = "This is a demo" & ControlChars.CrLf & "This is another test of the same implementation, with some more text." & ControlChars.CrLf & ControlChars.CrLf & vbTab & "- a 1st bullet point" & ControlChars.CrLf & vbTab & "- a 2nd bullet point" & ControlChars.CrLf & ControlChars.CrLf & "End of diff demo."
 
         'Console sample output
         Console.WriteLine("===== Diff2Console Plain Text =====")

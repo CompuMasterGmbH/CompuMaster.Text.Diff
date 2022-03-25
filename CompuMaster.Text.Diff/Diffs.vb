@@ -348,7 +348,7 @@ Namespace CompuMaster.Text
 #Region "Encoding support"
         Private Shared Function EncodeTextForHtml(text As String, inputType As EncodingRequirement) As String
             If inputType = EncodingRequirement.TextInputToBeEncodedIntoHtmlBeforeOutput Then
-                Return System.Net.WebUtility.HtmlEncode(text).Replace("&", "&amp;").Replace(" ", "&nbsp;").Replace(vbNewLine, "<br />").Replace(ControlChars.Cr, "<br />").Replace(ControlChars.Lf, "<br />").Replace(ControlChars.Tab, "&nbsp;&nbsp;&nbsp;&nbsp;")
+                Return System.Net.WebUtility.HtmlEncode(text).Replace("&", "&amp;").Replace(" ", "&nbsp;").Replace(ControlChars.CrLf, "<br />").Replace(ControlChars.Cr, "<br />").Replace(ControlChars.Lf, "<br />").Replace(ControlChars.Tab, "&nbsp;&nbsp;&nbsp;&nbsp;")
             Else
                 Return System.Net.WebUtility.HtmlEncode(text)
             End If
