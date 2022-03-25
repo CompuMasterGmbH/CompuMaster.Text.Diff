@@ -22,8 +22,10 @@ env:
     BUILD_CONFIGURATION: Release
     # Name of build project which creates required output for packaging/deployment
     BUILD_PROJECT: CompuMaster.Text.Diff/CompuMaster.Text.Diff.vbproj
+    BUILD_PROJECT2: DiffConsole/DiffConsole.vbproj
     # Name of directory (e.g. "bin") containing the subdirectory (e.g. "CI_CD") with all output files (*.dll)
     BUILD_OUTPUT_BASEDIR: CompuMaster.Text.Diff/bin
+    BUILD_OUTPUT_BASEDIR2: DiffConsole/bin
 
 jobs:
     publish:
@@ -46,14 +48,20 @@ jobs:
             - name: Build
               run: dotnet build --configuration=${{env.BUILD_CONFIGURATION}} --no-restore
 
-            - name: Pack binaries
+            - name: Zip binaries lib-only
               run: |
-                  (cd ${{env.BUILD_OUTPUT_BASEDIR}}/${{env.BUILD_CONFIGURATION}} && zip $OLDPWD/bin.zip -r .)
+                  (cd ${{env.BUILD_OUTPUT_BASEDIR}}/${{env.BUILD_CONFIGURATION}} && zip $OLDPWD/diff-lib.zip -r .)
+
+            - name: Zip binaries console-diff-app
+              run: |
+                  (cd ${{env.BUILD_OUTPUT_BASEDIR}}/${{env.BUILD_CONFIGURATION}} && zip $OLDPWD/diff-console-app.zip -r .)
 
             - name: Publish binaries
               uses: softprops/action-gh-release@v1
               with:
-                  files: "bin.zip"
+                  files: |
+                      "diff-lib.zip"
+                      "diff-console-app.zip"
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
