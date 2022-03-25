@@ -87,7 +87,6 @@ Namespace CompuMaster.Text
         Private Shared Sub DumpDiffToConsole(text1 As String, text2 As String, sections As IEnumerable(Of DiffSection), humanFriendlyEncodingOfControlChars As Boolean)
             Dim DefaultColor As ConsoleColor = Console.ForegroundColor
             Dim DefaultBackgroundColor As ConsoleColor = Console.BackgroundColor
-            Dim html = New System.Text.StringBuilder()
             Dim i1 = 0
             Dim i2 = 0
             For Each section In sections
@@ -122,7 +121,6 @@ Namespace CompuMaster.Text
         Private Shared Sub DumpDiffToConsoleShort(text1 As String, text2 As String, sections As IEnumerable(Of DiffSection), charsMargin As Integer, humanFriendlyEncodingOfControlChars As Boolean)
             Dim DefaultColor As ConsoleColor = Console.ForegroundColor
             Dim DefaultBackgroundColor As ConsoleColor = Console.BackgroundColor
-            Dim html = New System.Text.StringBuilder()
             Dim i1 = 0
             Dim i2 = 0
             For Each section In sections
@@ -169,6 +167,85 @@ Namespace CompuMaster.Text
             Console.ForegroundColor = DefaultColor
             Console.BackgroundColor = DefaultBackgroundColor
         End Sub
+#End Region
+
+#Region "DumpDiff2Text"
+
+        ''' <summary>
+        ''' Prepare diff output for colored text console presentation
+        ''' </summary>
+        ''' <param name="text1">Initial text</param>
+        ''' <param name="text2">Changed text</param>
+        Public Shared Function DumpDiffAsText(text1 As String, text2 As String) As String
+            Return DumpDiffAsText(text1, text2, False)
+        End Function
+
+        ''' <summary>
+        ''' Prepare diff output for colored text console presentation
+        ''' </summary>
+        ''' <param name="text1">Initial text</param>
+        ''' <param name="text2">Changed text</param>
+        ''' <param name="humanFriendlyEncodingOfControlChars">Make control chars CR, LF, TAB, VTAB, FF, BACK, ESC, NUL visible at result</param>
+        Public Shared Function DumpDiffAsText(text1 As String, text2 As String, humanFriendlyEncodingOfControlChars As Boolean) As String
+            Dim sections As IEnumerable(Of DiffSection) = DiffLib.Diff.CalculateSections(Of Char)(text1.ToCharArray, text2.ToCharArray)
+            Return DumpDiffAsText(text1, text2, sections, humanFriendlyEncodingOfControlChars, "{BEGIN REMOVED}", "{/END REMOVED}", "{BEGIN ADDED}", "{/END ADDED}")
+        End Function
+
+        ''' <summary>
+        ''' Prepare diff output for colored text console presentation
+        ''' </summary>
+        ''' <param name="text1">Initial text</param>
+        ''' <param name="text2">Changed text</param>
+        ''' <param name="humanFriendlyEncodingOfControlChars">Make control chars CR, LF, TAB, VTAB, FF, BACK, ESC, NUL visible at result</param>
+        Public Shared Function DumpDiffAsText(text1 As String, text2 As String, humanFriendlyEncodingOfControlChars As Boolean,
+                                              textInsertedBeforeRemovedText As String,
+                                              textInsertedBehindRemovedText As String,
+                                              textInsertedBeforeAddedText As String,
+                                              textInsertedBehingAddedText As String
+                                              ) As String
+            Dim sections As IEnumerable(Of DiffSection) = DiffLib.Diff.CalculateSections(Of Char)(text1.ToCharArray, text2.ToCharArray)
+            Return DumpDiffAsText(text1, text2, sections, humanFriendlyEncodingOfControlChars,
+                                              textInsertedBeforeRemovedText,
+                                              textInsertedBehindRemovedText,
+                                              textInsertedBeforeAddedText,
+                                              textInsertedBehingAddedText)
+        End Function
+
+        ''' <summary>
+        ''' Prepare diff output for colored text console presentation
+        ''' </summary>
+        ''' <param name="text1">Initial text</param>
+        ''' <param name="text2">Changed text</param>
+        ''' <param name="sections"></param>
+        ''' <param name="humanFriendlyEncodingOfControlChars">Make control chars CR, LF, TAB, VTAB, FF, BACK, ESC, NUL visible at result</param>
+        Private Shared Function DumpDiffAsText(text1 As String, text2 As String, sections As IEnumerable(Of DiffSection), humanFriendlyEncodingOfControlChars As Boolean,
+                                              textInsertedBeforeRemovedText As String,
+                                              textInsertedBehindRemovedText As String,
+                                              textInsertedBeforeAddedText As String,
+                                              textInsertedBehingAddedText As String
+                                              ) As String
+            Dim Result = New System.Text.StringBuilder()
+            Dim i1 = 0
+            Dim i2 = 0
+            For Each section In sections
+                If section.IsMatch Then
+                    Result.Append(EncodeForConsole(text1.Substring(i1, section.LengthInCollection1), humanFriendlyEncodingOfControlChars))
+                Else
+                    'Removed text
+                    If section.LengthInCollection1 > 0 Then
+                        Result.Append(textInsertedBeforeRemovedText + EncodeForConsole(text1.Substring(i1, section.LengthInCollection1), humanFriendlyEncodingOfControlChars) + textInsertedBehindRemovedText)
+                    End If
+                    'Added text
+                    If section.LengthInCollection2 > 0 Then
+                        Result.Append(textInsertedBeforeAddedText + EncodeForConsole(text2.Substring(i2, section.LengthInCollection2), humanFriendlyEncodingOfControlChars) + textInsertedBehingAddedText)
+                    End If
+                End If
+
+                i1 += section.LengthInCollection1
+                i2 += section.LengthInCollection2
+            Next
+            Return Result.ToString()
+        End Function
 #End Region
 
 #Region "DumpDiff2Html"
