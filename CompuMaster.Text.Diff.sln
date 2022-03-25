@@ -7,7 +7,7 @@ Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "CompuMaster.Text.Diff", "Co
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "SampleDemo", "SampleDemo\SampleDemo.vbproj", "{2F2D48AA-B95A-4B99-8AD7-1A8B8B6D0067}"
 EndProject
-Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "DiffConsole", "DiffConsole\DiffConsole.vbproj", "{299D8191-DC99-4CC8-9B47-5E4F479B8693}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "Diff", "Diff\Diff.vbproj", "{299D8191-DC99-4CC8-9B47-5E4F479B8693}"
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "CompuMaster.Test.Text.Diff", "CompuMaster.Test.Text.Diff\CompuMaster.Test.Text.Diff.vbproj", "{0CB0E2A0-2B3C-4935-8D0B-A2EF28B83B25}"
 EndProject

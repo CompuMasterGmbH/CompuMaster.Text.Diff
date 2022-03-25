@@ -4,8 +4,8 @@
 		<RootNamespace></RootNamespace>
 		<AssemblyName>CompuMaster.Text.Diff</AssemblyName>
 		<Title>CompuMaster.Text.Diff</Title>
-		<TargetFrameworks>netstandard2.0;netcoreapp3.1;net48;net4.6</TargetFrameworks>
-		<Version>2022.3.25.101</Version>
+		<TargetFrameworks>netstandard2.0;net4.6</TargetFrameworks>
+		<Version>2022.3.25.102</Version>
 		<Authors>Jochen Wezel</Authors>
 		<Company>CompuMaster GmbH</Company>
 		<Copyright>2017-2022 CompuMaster GmbH</Copyright>

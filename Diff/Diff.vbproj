@@ -2,10 +2,10 @@
 
 	<PropertyGroup>
 		<RootNamespace>DiffConsole</RootNamespace>
-		<AssemblyName>DiffConsole</AssemblyName>
+		<AssemblyName>Diff</AssemblyName>
 		<Title>CompuMaster.Text.Diff Console Demo App</Title>
-		<TargetFrameworks>netstandard2.0;netcoreapp3.1;net5.0;net48;net4.6</TargetFrameworks>
-		<Version>2022.3.25.100</Version>
+		<TargetFrameworks>netstandard2.0;net5.0;net4.6</TargetFrameworks>
+		<Version>2022.3.25.102</Version>
 		<Authors>Jochen Wezel</Authors>
 		<Company>CompuMaster GmbH</Company>
 		<Copyright>2017-2022 CompuMaster GmbH</Copyright>
@@ -13,17 +13,15 @@
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<Configurations>Debug;Release</Configurations>
 		<OutputType>Exe</OutputType>
+		<MyType>Console</MyType>
+		<Deterministic>true</Deterministic>
+		<TargetFrameworkProfile />
 	</PropertyGroup>
 	<PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
 		<PlatformTarget>AnyCPU</PlatformTarget>
 		<ProjectGuid>{299D8191-DC99-4CC8-9B47-5E4F479B8693}</ProjectGuid>
 		<StartupObject>Sub Main</StartupObject>
-		<RootNamespace>DiffConsole</RootNamespace>
-		<AssemblyName>Diff</AssemblyName>
 		<FileAlignment>512</FileAlignment>
-		<MyType>Console</MyType>
-		<Deterministic>true</Deterministic>
-		<TargetFrameworkProfile />
 	</PropertyGroup>
 	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
 		<PlatformTarget>AnyCPU</PlatformTarget>
@@ -60,6 +58,9 @@
 	<PropertyGroup>
 		<MyType>Empty</MyType>
 		<ApplicationIcon>cm.ico</ApplicationIcon>
+		<PackageProjectUrl>https://github.com/CompuMasterGmbH/CompuMaster.Text.Diff/</PackageProjectUrl>
+		<PackageIcon>logo_64x64.png</PackageIcon>
+		<PackageIconUrl />
 	</PropertyGroup>
   <ItemGroup>
     <PackageReference Include="CommandLineParser" Version="2.8.0" />
@@ -67,6 +68,13 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CompuMaster.Text.Diff\CompuMaster.Text.Diff.vbproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="logo_64x64.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>

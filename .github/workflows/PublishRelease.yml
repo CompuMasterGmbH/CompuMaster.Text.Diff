@@ -22,7 +22,7 @@ env:
     BUILD_CONFIGURATION: Release
     # Name of build project which creates required output for packaging/deployment
     BUILD_PROJECT: CompuMaster.Text.Diff/CompuMaster.Text.Diff.vbproj
-    BUILD_PROJECT2: DiffConsole/DiffConsole.vbproj
+    BUILD_PROJECT2: DiffConsole/Diff.vbproj
     # Name of directory (e.g. "bin") containing the subdirectory (e.g. "CI_CD") with all output files (*.dll)
     BUILD_OUTPUT_BASEDIR: CompuMaster.Text.Diff/bin
     BUILD_OUTPUT_BASEDIR2: DiffConsole/bin
