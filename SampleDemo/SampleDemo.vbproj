@@ -52,7 +52,7 @@
 	<MyType>Empty</MyType>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="CompuMaster.VisualBasicCompatibility" Version="1.0.4" />
+    <PackageReference Include="CompuMaster.VisualBasicCompatibility" Version="1.0.6" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CompuMaster.Text.Diff\CompuMaster.Text.Diff.vbproj" />

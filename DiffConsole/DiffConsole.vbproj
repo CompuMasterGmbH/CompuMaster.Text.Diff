@@ -4,7 +4,7 @@
 		<RootNamespace>DiffConsole</RootNamespace>
 		<AssemblyName>DiffConsole</AssemblyName>
 		<Title>CompuMaster.Text.Diff Console Demo App</Title>
-		<TargetFrameworks>netcoreapp3.1;net5.0;net48;net4.6</TargetFrameworks>
+		<TargetFrameworks>netstandard2.0;netcoreapp3.1;net5.0;net48;net4.6</TargetFrameworks>
 		<Version>2022.3.25.100</Version>
 		<Authors>Jochen Wezel</Authors>
 		<Company>CompuMaster GmbH</Company>
