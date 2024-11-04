@@ -56,9 +56,9 @@ Module SampleMain
         Console.WriteLine()
 
         'HTML output rendered as HTML page in browser
-        Dim TempHtmlFile As String = System.IO.Path.GetTempFileName & ".htm"
+        Dim TempHtmlFile As String = System.IO.Path.GetTempFileName & ".html"
         System.IO.File.WriteAllText(TempHtmlFile, "<h1>Diff sample page</h1><h2>Diff2Html (Input as Text)</h2>" & Text2HtmlOut & "<h2>Diff2Html (Input as Html)</h2>" & Html2HtmlOut & "<h2>Diff2Html+HumanFriendlyControlChars (Input as Text)</h2>" & Text2HtmlOutHumanFriendly & "<h2>Diff2Html+HumanFriendlyControlChars (Input as Html)</h2>" & Html2HtmlOutHumanFriendly)
-        System.Diagnostics.Process.Start(TempHtmlFile)
+        System.Diagnostics.Process.Start(New System.Diagnostics.ProcessStartInfo(TempHtmlFile) With {.UseShellExecute = True})
 
         'Plain text output
         Dim TempPlainTextFile As String = System.IO.Path.GetTempFileName & ".txt"
@@ -70,7 +70,7 @@ Module SampleMain
                                     "## DumpDiffAsTextHumanFriendly" & System.Environment.NewLine &
                                     DumpDiffAsTextHumanFriendly
                                     )
-        System.Diagnostics.Process.Start(TempPlainTextFile)
+        System.Diagnostics.Process.Start(New System.Diagnostics.ProcessStartInfo(TempPlainTextFile) With {.UseShellExecute = True})
     End Sub
 
 End Module
