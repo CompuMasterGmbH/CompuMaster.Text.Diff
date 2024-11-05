@@ -9,6 +9,9 @@ Quickly dump a nicely formatted diff output to System.Console or to HTML
 
 ## Sample code
 This is the full code to create above samples:
+
+### C#
+
 ```c#
 using System;
 using System.Diagnostics;
@@ -53,6 +56,8 @@ static class SampleMain
     }
 }
 ```
+
+### VB.NET
 
 ```vb.net
 Module SampleMain
