@@ -50,7 +50,7 @@ static class SampleMain
         Console.WriteLine(Html2HtmlOutHumanFriendly);
         Console.WriteLine();
 
-        string TempHtmlFile = Path.GetTempFileName() + ".htm";
+        string TempHtmlFile = Path.GetTempFileName() + ".html";
         File.WriteAllText(TempHtmlFile, "<h1>Diff2Html (Input as Text)</h1>" + Text2HtmlOut + "<h1>Diff2Html (Input as Html)</h1>" + Html2HtmlOut + "<h1>Diff2Html+HumanFriendlyControlChars (Input as Text)</h1>" + Text2HtmlOutHumanFriendly + "<h1>Diff2Html+HumanFriendlyControlChars (Input as Html)</h1>" + Html2HtmlOutHumanFriendly);
         System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo(TempHtmlFile) { UseShellExecute = true });
     }
@@ -90,7 +90,7 @@ Module SampleMain
         Dim Html2HtmlOutHumanFriendly As String = CompuMaster.Text.Diffs.DumpDiffAsHtml(text1, text2, CompuMaster.Text.Diffs.EncodingRequirement.HtmlInputWithoutRequirementOfEncodingBeforeOutput, True)
         Console.WriteLine(Html2HtmlOutHumanFriendly)
         Console.WriteLine()
-        Dim TempHtmlFile As String = System.IO.Path.GetTempFileName & ".htm"
+        Dim TempHtmlFile As String = System.IO.Path.GetTempFileName & ".html"
         System.IO.File.WriteAllText(TempHtmlFile, "<h1>Diff2Html (Input as Text)</h1>" & Text2HtmlOut & "<h1>Diff2Html (Input as Html)</h1>" & Html2HtmlOut & "<h1>Diff2Html+HumanFriendlyControlChars (Input as Text)</h1>" & Text2HtmlOutHumanFriendly & "<h1>Diff2Html+HumanFriendlyControlChars (Input as Html)</h1>" & Html2HtmlOutHumanFriendly)
         System.Diagnostics.Process.Start(New System.Diagnostics.ProcessStartInfo(TempHtmlFile) With {.UseShellExecute = True})
     End Sub
