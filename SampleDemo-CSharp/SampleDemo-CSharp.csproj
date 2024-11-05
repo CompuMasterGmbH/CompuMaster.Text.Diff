@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>net6.0;net48</TargetFrameworks>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RootNamespace>SampleDemo_CSharp</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CompuMaster.Text.Diff\CompuMaster.Text.Diff.vbproj" />
+  </ItemGroup>
+
+</Project>
