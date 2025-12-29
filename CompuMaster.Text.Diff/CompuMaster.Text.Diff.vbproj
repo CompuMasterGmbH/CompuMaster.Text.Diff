@@ -62,7 +62,13 @@
 	  <PackageReference Include="CompuMaster.VisualBasicCompatibility" Version="1.0.6" />
 	  <PackageReference Include="difflib" Version="2017.7.26.1241" />
 	</ItemGroup>
-	<ItemGroup>
+  <PropertyGroup>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="../README.md" Pack="true" PackagePath="/"/>
+  </ItemGroup>
+  <ItemGroup>
 	  <None Include="logo_64x64.png">
 	    <Pack>True</Pack>
 	    <PackagePath></PackagePath>

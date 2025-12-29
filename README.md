@@ -2,10 +2,10 @@
 Quickly dump a nicely formatted diff output to System.Console or to HTML
 
 ## Create quickly a colored diff-output to the system console
-![Screenshot of samples for System.Console](Samples/ConsoleSamples.png)
+![Screenshot of samples for System.Console](https://raw.githubusercontent.com/CompuMasterGmbH/CompuMaster.Text.Diff/master/Samples/ConsoleSamples.png)
 
 ## Create quickly a colored diff-output to HTML
-![Screenshot of samples for System.Console](Samples/HtmlSamples.png)
+![Screenshot of samples for System.Console](https://raw.githubusercontent.com/CompuMasterGmbH/CompuMaster.Text.Diff/master/Samples/HtmlSamples.png)
 
 ## Sample code
 This is the full code to create above samples:
